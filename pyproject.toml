@@ -1,0 +1,34 @@
+[project]
+name = "sparkpl"
+version = "0.1.0"
+description = "A utility package for converting between PySpark and Polars DataFrames"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "polars>=1.17.1",
+    "pyspark>=3.5.3",
+]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Data Processing :: General",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/sparkpl"]
+
+[project.urls]
+"Homepage" = "https://github.com/Boadzie/sparkpl"
+"Bug Tracker" = "https://github.com/Boadzie/sparkpl/issues"
+
+[tool.pytest.ini_options]
+pythonpath = [
+    ".",
+    "src"
+]
