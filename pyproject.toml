@@ -1,6 +1,9 @@
 [project]
 name = "sparkpl"
 version = "0.1.0"
+authors = [
+  { name="Daniel Boadzie", email="boadziedaniel43@gmail.com" },
+]
 description = "A utility package for converting between PySpark and Polars DataFrames"
 readme = "README.md"
 requires-python = ">=3.11"
