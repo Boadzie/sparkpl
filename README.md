@@ -21,7 +21,7 @@ pip install sparkpl
 
 ```python
 from pyspark.sql import SparkSession
-from sparkpl import DataFrameConverter
+from sparkpl.converter import DataFrameConverter
 
 # Initialize Spark
 spark = SparkSession.builder.appName("example").getOrCreate()
