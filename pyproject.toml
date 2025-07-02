@@ -1,6 +1,6 @@
 [project]
 name = "sparkpl"
-version = "2.0.0"
+version = "2.0.1"
 authors = [
   { name="Daniel Boadzie", email="boadziedaniel43@gmail.com" },
 ]
