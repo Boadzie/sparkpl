@@ -8,8 +8,10 @@ description = "A utility package for converting between PySpark and Polars DataF
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
-    "polars>=1.17.1",
-    "pyspark>=3.5.3",
+    "polars>=1.31.0",
+    "pyspark>=4.0.0",
+    "loguru>=0.7.3",
+    "pyarrow>=20.0.0"
 ]
 
 classifiers = [
