@@ -24,7 +24,7 @@ pip install sparkpl
 ```python
 import polars as pl
 from pyspark.sql import SparkSession
-from sparkpl import spark_to_polars, polars_to_spark
+from sparkpl.converter import spark_to_polars, polars_to_spark
 
 # Initialize Spark
 spark = SparkSession.builder.appName("example").getOrCreate()
@@ -46,7 +46,7 @@ spark_df_back.show()
 ### Class-based API
 
 ```python
-from sparkpl import DataFrameConverter
+from sparkpl.converter import DataFrameConverter
 
 converter = DataFrameConverter(spark)
 
@@ -66,7 +66,7 @@ spark_df = converter.polars_to_spark(polars_df, table_name="my_table")
 ### Error Handling
 
 ```python
-from sparkpl import DataFrameConverterError
+from sparkpl.converter import DataFrameConverterError
 
 try:
     polars_df = spark_to_polars(spark_df)
