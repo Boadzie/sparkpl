@@ -112,11 +112,11 @@ SparkPL automatically selects the optimal conversion method:
 
 ## Requirements
 
-- Python >=3.8
-- polars >=0.18.0
-- pyspark >=3.0.0
-- pyarrow >=5.0.0
-- loguru >=0.6.0
+- Python >=3.11
+- polars >=1.31.0
+- pyspark >=4.0.0
+- pyarrow >=20.0.0
+- loguru >=0.7.3
 
 ## API Reference
 
