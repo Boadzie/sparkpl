@@ -1,5 +1,9 @@
 # sparkpl
 
+[![tests](https://github.com/Boadzie/sparkpl/actions/workflows/test.yml/badge.svg)](https://github.com/Boadzie/sparkpl/actions/workflows/test.yml)
+[![PyPI](https://img.shields.io/pypi/v/sparkpl.svg)](https://pypi.org/project/sparkpl/)
+[![Python](https://img.shields.io/pypi/pyversions/sparkpl.svg)](https://pypi.org/project/sparkpl/)
+
 > A lightweight, pandas-free Python package for seamless conversion between PySpark and Polars DataFrames.
 
 ## Installation
@@ -184,7 +188,9 @@ large_polars = converter.spark_to_polars(huge_spark_df, batch_size=50_000)
 ```bash
 git clone https://github.com/Boadzie/sparkpl.git
 cd sparkpl
-uv venv --python 3.11 && uv pip install -e .
+uv venv --python 3.11
+uv pip install -e ".[dev]"
+pytest -v
 ```
 
 ## Changelog
