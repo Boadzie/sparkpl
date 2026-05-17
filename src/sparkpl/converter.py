@@ -193,15 +193,19 @@ class DataFrameConverter:
             return result
     
     def _polars_to_spark_arrow(
-        self, 
-        polars_df: pl.DataFrame, 
+        self,
+        polars_df: pl.DataFrame,
         table_name: Optional[str] = None
     ) -> SparkDataFrame:
         """Convert using Arrow (direct method)"""
         try:
-            # Convert Polars to Arrow table
-            arrow_table = polars_df.to_arrow()
-            
+            # Convert Polars to Arrow table.
+            # Consolidate into a single record batch — Polars produces a
+            # multi-chunk table after operations like vstack/concat, and
+            # Spark's createDataFrame(arrow_table) silently reads only the
+            # first batch, dropping subsequent rows.
+            arrow_table = polars_df.to_arrow().combine_chunks()
+
             # Use Spark's createDataFrame with Arrow table (Spark 4.0+)
             try:
                 spark_df = self.spark.createDataFrame(arrow_table)
